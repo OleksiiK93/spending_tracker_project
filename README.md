@@ -21,4 +21,4 @@ Monzo, MoneyDashboard, lots of mobile/online banking apps
 * The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
 
 #### Learnings
-* Working with PostgreSQL databases (create, list)
+* Working with PostgreSQL (create databases, list databases)
