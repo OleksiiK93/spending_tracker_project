@@ -10,11 +10,12 @@ def save(merchant):
 
 def select_all():
     merchants = []
-    sql = "SELECT * FROM merchants"
+    sql = "SELECT * FROM merchants ORDER BY name ASC"
     results = run_sql(sql)
     for row in results:
         merchant = Merchant(row['name'], row['id'])
         merchants.append(merchant)
+        # merchants = sorted(merchants, key=lambda merchant: merchant.name)
     return merchants
 
 def select(id):

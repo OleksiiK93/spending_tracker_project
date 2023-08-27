@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Merchants</h1>
+    <ul>
+        {% for merchant in merchants %}
+            <li>
+                <p>{{merchant.name}}</p>
+                <form action="/merchants/{{merchant.id}}/edit">
+                    <input type="submit" value="Edit">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="/merchants/new">
+        <input type="submit" value="New Merchant">
+    </form>
+{% endblock %}
