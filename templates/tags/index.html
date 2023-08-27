@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Tags</h1>
+    <ul>
+        {% for tag in tags %}
+            <li>
+                <p>{{tag.name}}</p>
+                <form action="/tags/{{tag.id}}/edit">
+                    <input type="submit" value="Edit">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="/tags/new">
+        <input type="submit" value="New Tag">
+    </form>
+{% endblock %}
