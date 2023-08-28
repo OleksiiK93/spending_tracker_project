@@ -22,3 +22,12 @@ def select_all():
         transactions.append(transaction)
     return transactions
 
+def total():
+    total = 0
+    sql = "SELECT amount FROM transactions"
+    results = run_sql(sql)
+    for row in results:
+        amount = row['amount']
+        total += amount
+    return total
+
