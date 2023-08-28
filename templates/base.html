@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spending Tracker</title>
+    <title>Trackify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Black Ops One' rel='stylesheet'>
 </head>
 <body>
+    <header>
+    <h1 id="logo">Trackify</h1>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -14,8 +18,24 @@
             <li><a href="/transactions">Transactions</a></li>
         </ul>
     </nav>
-    <hr>
+    </header>
+    <main>
     {% block content %}
     {% endblock %}
+    </main>
+    <footer>
+    <h1 id="logo">Trackify</h1>
+    <section>
+        <h2>Our site</h2>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/merchants">Merchants</a></li>
+                <li><a href="/tags">Tags</a></li>
+                <li><a href="/transactions">Transactions</a></li> 
+            </ul>
+        </nav>
+    </section>
+    </footer>
 </body>
 </html>

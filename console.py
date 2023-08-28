@@ -22,14 +22,13 @@ tag_repository.save(tag_3)
 
 transaction_1 = Transaction(merchant_1, tag_1, 55.00)
 transaction_repository.save(transaction_1)
-transaction_2 = Transaction(merchant_2, tag_2, 27.32)
+transaction_2 = Transaction(merchant_2, tag_2, 45)
 transaction_repository.save(transaction_2)
+total = transaction_repository.total()
 
 merchants = merchant_repository.select_all()
 tags = tag_repository.select_all()
 transactions = transaction_repository.select_all()
-
-pdb.set_trace()
 
 selected_merchant = merchant_repository.select(1)
 selected_tag = tag_repository.select(3)
@@ -39,3 +38,4 @@ result_1 = merchant_repository.update(merchant_2)
 tag_1.name = 'Vacation'
 result_2 = tag_repository.update(tag_1)
 
+pdb.set_trace()
