@@ -2,15 +2,19 @@
 {% block content %}
     <h2>Transactions</h2>
     <table>
+      <thead>
         <tr>
           <th>Merchant</th>
           <th>Tag</th>
+          <th>Time</th>
           <th>Amount</th>
         </tr>
+      </thead>
         {% for transaction in transactions %}        
         <tr>
           <td>{{transaction.merchant.name}}</td>
           <td>{{transaction.tag.name}}</td>
+          <td>{{transaction.timestamp}}</td>
           <td>£{{transaction.amount}}</td>
         </tr>
         {% endfor %}

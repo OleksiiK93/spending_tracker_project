@@ -3,12 +3,12 @@ body {
     margin: 0;
 }
 body > header {
-    background-color: rgb(76, 226, 76);
+    background-color: #85BB65;
     padding: 16px;
     color: white; 
 }
 body > footer {
-    background-color: rgb(76, 226, 76);
+    background-color: #85BB65;
     padding: 16px;
     color: white;
     /* text-align: center; */
@@ -30,4 +30,13 @@ nav > ul > li > a {
 body > main > article {
     width: 70%;
     margin: auto;
+}
+
+table, td {
+  border: 1px solid #333;
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
 }

@@ -18,5 +18,6 @@ CREATE TABLE transactions (
     id SERIAL PRIMARY KEY,
     merchant_id INT NOT NULL REFERENCES merchants(id),
     tag_id INT NOT NULL REFERENCES tags(id),
-    amount REAL
+    amount REAL,
+    timestamp TIMESTAMP
 );

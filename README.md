@@ -17,7 +17,7 @@ Monzo, MoneyDashboard, lots of mobile/online banking apps
 
 * The user should be able to mark Merchants and Tags as deactivated. Users will not be able to choose deactivated merchants/tags when creating a transaction. 
 * Transactions should have a timestamp, and the user should be able to view transactions sorted by the time they took place.
-* The user should be able to supply a budget, and the app should alert the user somehow when when they are nearing this budget or have gone over it.
+* The user should be able to supply a budget, and the app should alert the user somehow when they are nearing this budget or have gone over it.
 * The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
 
 #### Learnings
