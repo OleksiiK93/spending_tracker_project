@@ -30,5 +30,9 @@ def edit_merchant(id):
 def update_merchant(id):
     merchant = merchant_repository.select(id)
     merchant.name = request.form['name']
+    if "deactivated" in request.form:
+        merchant.deactivate()
+    else:
+        merchant.deactivated = False
     merchant_repository.update(merchant)
     return redirect("/merchants")

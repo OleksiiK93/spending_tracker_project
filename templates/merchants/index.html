@@ -4,7 +4,7 @@
     <ul>
         {% for merchant in merchants %}
             <li>
-                <p>{{merchant.name}}</p>
+                <p>{{merchant.name}} {% if merchant.deactivated %} <i style="color: grey;">deactivated</i>{% endif %}</p>
                 <form action="/merchants/{{merchant.id}}/edit">
                     <input type="submit" value="Edit">
                 </form>

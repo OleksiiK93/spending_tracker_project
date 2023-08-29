@@ -30,5 +30,9 @@ def edit_tag(id):
 def update_tag(id):
     tag = tag_repository.select(id)
     tag.name = request.form['name']
+    if "deactivated" in request.form:
+        tag.deactivate()
+    else:
+        tag.deactivated = False
     tag_repository.update(tag)
     return redirect("/tags")

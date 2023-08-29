@@ -4,12 +4,14 @@ DROP TABLE merchants;
 
 CREATE TABLE merchants (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    deactivated BOOLEAN
 );
 
 CREATE TABLE tags (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    deactivated BOOLEAN
 );
 
 CREATE TABLE transactions (

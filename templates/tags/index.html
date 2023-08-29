@@ -4,7 +4,7 @@
     <ul>
         {% for tag in tags %}
             <li>
-                <p>{{tag.name}}</p>
+                <p>{{tag.name}} {% if tag.deactivated %}<i style="color: grey;">deactivated</i>{% endif %}</p>
                 <form action="/tags/{{tag.id}}/edit">
                     <input type="submit" value="Edit">
                 </form>

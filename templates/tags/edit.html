@@ -3,7 +3,9 @@
     <h2>Edit a Tag</h2>
     <form action="/tags/{{tag.id}}" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{tag.name}}">
+        <input type="text" id="name" name="name" value="{{tag.name}}"><br>
+        <input type="checkbox" id="deactivated" name="deactivated" value="True" {% if tag.deactivated %} checked {%endif%} />
+        <label for="deactivated">Deactivated</label><br>
         <input type="submit" value="Update">
     </form>
 {% endblock %}

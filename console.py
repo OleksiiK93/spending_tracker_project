@@ -8,6 +8,9 @@ import repositories.transaction_repository as transaction_repository
 
 merchant_1 = Merchant("Booking.com")
 merchant_repository.save(merchant_1)
+merchant_1.deactivate()
+merchant_repository.update(merchant_1)
+
 merchant_2 = Merchant("Vodafone")
 merchant_repository.save(merchant_2)
 merchant_3 = Merchant("Scottish Citylink")
