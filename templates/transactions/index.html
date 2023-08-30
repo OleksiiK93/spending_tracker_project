@@ -25,8 +25,31 @@
         </tr>
         {% endfor %}
       </table>
-      <p>The total is £{{total}}.</p>
+      {% if budget == None %}
+      <p>You've spent £{{total}} so far. Don't forget to set your budget.</p>
+      {% endif %}
+      {% if budget != None and balance >= 100 %}
+      <p>You've spent £{{total}} so far. The remaining balance is <b style="color: #85BB65;">£{{balance}}</b>. Should be enough not to die a hungry death today.</p>
+      {% elif budget != None and 0 <= balance < 100 %}
+      <p>You've spent £{{total}} so far. You only have <b style="color: rgb(255, 140, 0);">£{{balance}}</b> left. Make sure not to spend too much before next paycheck.</p>
+      {% elif budget != None and balance < 0 %}
+      <p>You've spent £{{total}} so far. Your debt is <b style="color: rgb(255, 0, 0);">£{{debt}}</b>. Time to get some help!</p>
+      {% endif %}
     <form action="/transactions/new">
         <input type="submit" value="New Transaction">
+    </form>
+    <h2>Budget</h2>
+    {% if budget == None %}
+    <p>Please enter your budget below:</p>
+    {% else %}
+    <p>Your budget is currently £{{budget.amount}}. If you wish to update it, please use the form below:</p>
+    {% endif %}
+    <form action="/budgets" method="post">
+        <label for="amount">£</label>
+        <input type="number" name="amount" id="amount" step="0.01" value="0.00" min="0" required><br>
+        <input type='submit' value="Add/Update">
+    </form> 
+    <form action="/budgets/delete" method="post">
+      <input type="submit" value="Reset">
     </form>
 {% endblock %}

@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, Blueprint
 import repositories.transaction_repository as transaction_repository
 import repositories.merchant_repository as merchant_repository
 import repositories.tag_repository as tag_repository
+import repositories.budget_repository as budget_repository
 from models.transaction import Transaction
 
 transactions_blueprint = Blueprint("transactions", __name__)
@@ -10,7 +11,15 @@ transactions_blueprint = Blueprint("transactions", __name__)
 def transactions():
     transactions = transaction_repository.select_all()
     total = transaction_repository.total()
-    return render_template("transactions/index.html", transactions = transactions, total = total)
+    budget = None
+    balance = None
+    debt = None
+    budgets = budget_repository.select_all()
+    if len(budgets) > 0:
+        budget = budgets[-1]
+        balance = budget.amount - total
+        debt = abs(balance)       
+    return render_template("transactions/index.html", transactions = transactions, total = total, budget = budget, balance = balance, debt = debt)
 
 @transactions_blueprint.route("/transactions/new")
 def new_transaction():
