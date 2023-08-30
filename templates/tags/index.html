@@ -3,12 +3,11 @@
     <h2>Tags</h2>
     <ul>
         {% for tag in tags %}
-            <li>
-                <p>{{tag.name}} {% if tag.deactivated %}<i style="color: grey;">deactivated</i>{% endif %}</p>
-                <form action="/tags/{{tag.id}}/edit">
-                    <input type="submit" value="Edit">
-                </form>
-            </li>
+        <li>
+          <form style="margin: 0; padding: 0;" action="/tags/{{tag.id}}/edit">
+            <p>{{tag.name}} {% if tag.deactivated %} <i style="color: grey;">deactivated</i>{% endif %} <input type="submit" value="Edit"></p>
+          </form>
+        </li>
         {% endfor %}
     </ul>
     <form action="/tags/new">
