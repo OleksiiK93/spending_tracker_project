@@ -8,6 +8,7 @@
           <th>Tag</th>
           <th>Time</th>
           <th>Amount</th>
+          <th></th>
         </tr>
       </thead>
         {% for transaction in transactions %}        
@@ -16,6 +17,11 @@
           <td>{{transaction.tag.name}}</td>
           <td>{{transaction.timestamp}}</td>
           <td>£{{transaction.amount}}</td>
+          <td>
+            <form action="/transactions/{{transaction.id}}/delete" method="post">
+              <input type="submit" value="Remove">
+            </form>
+          </td>
         </tr>
         {% endfor %}
       </table>
