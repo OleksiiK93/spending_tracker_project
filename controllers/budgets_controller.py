@@ -8,7 +8,6 @@ budgets_blueprint = Blueprint("budgets", __name__)
 @budgets_blueprint.route("/budgets", methods = ["POST"])
 def create_budget():
     amount = request.form['amount']
-    # pdb.set_trace()
     budget = Budget(amount)
     budget_repository.save(budget)
     return redirect("/transactions")

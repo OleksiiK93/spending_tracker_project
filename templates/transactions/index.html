@@ -46,10 +46,10 @@
     {% endif %}
     <form action="/budgets" method="post">
         <label for="amount">£</label>
-        <input type="number" name="amount" id="amount" step="0.01" value="0.00" min="0" required><br>
-        <input type='submit' value="Add/Update">
+        <input type="number" name="amount" id="amount" step="0.01" value="0.00" min="0" required>
+        <input type='submit' {% if budget == None %} value="Add" {% else %} value="Update" {% endif %}>
     </form> 
-    <form action="/budgets/delete" method="post">
+    <form style="margin-top: 10px;" action="/budgets/delete" method="post">
       <input type="submit" value="Reset">
     </form>
 {% endblock %}
