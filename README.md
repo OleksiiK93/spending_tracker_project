@@ -2,6 +2,29 @@
 
 A customer has asked to build an app that allows them to track their spending.
 
+The app must be built using only:
+
+- HTML/CSS
+- Python
+- Flask
+- PostgreSQL and psycopg2
+
+It must not use:
+
+- Any Object Relational Mapper (e.g. ActiveRecord)
+- JavaScript
+- Any pre-built CSS libraries, such as Bootstrap
+- Authentication
+
+### Setup + Installation
+
+ - in Terminal, navigate to the project folder
+ - dropdb spending_tracker
+ - createdb spending_tracker
+ - psql -d spending_tracker -f project_folder/db/spending_tracker.sql
+ - psql -d spending_tracker
+ - flask run
+
 #### MVP
 
 * The app should allow the user to create and edit merchants, e.g. Tesco, Amazon, ScotRail
@@ -23,15 +46,7 @@ Monzo, MoneyDashboard, lots of mobile/online banking apps
 
 * The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
 
-#### Setup
-Make sure that you have the following installed on your system:
-* [PostgreSQL](https://www.postgresql.org/download/)
-* [Flask](https://flask.palletsprojects.com/en/2.3.x/installation/)
+![home](https://github.com/OleksiiK93/spending_tracker_project/assets/110308047/e6820a04-9b19-4e84-83b4-ad35b697a52c)
+![merchants](https://github.com/OleksiiK93/spending_tracker_project/assets/110308047/2b3a4654-35cc-4190-ba27-f99df109bb72)
+![transactions](https://github.com/OleksiiK93/spending_tracker_project/assets/110308047/1f448122-118a-4ca5-99be-c7a850bcdc26)
 
-1. Download the ZIP archive with the code.
-2. Extract the archive.
-3. Open the directory with the extracted files in Terminal.
-4. Create the database by executing the following command `createdb spending_tracker`.   
-
-#### Learnings
-* Working with PostgreSQL (create databases, list databases)
